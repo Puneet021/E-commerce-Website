@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Base from "../core/Base";
+import Footer from "../core/Footer";
 import { Link } from "react-router-dom";
 import { getCategories, createaProduct } from "./helper/adminapicall";
 import { isAutheticated } from "../auth/helper/index";
@@ -164,21 +165,26 @@ const AddProduct = () => {
   );
 
   return (
-    <Base
-      title="Add a product here!"
-      description="Welcome to product creation section"
-      className="container bg-info p-4"
-    >
-      <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">
-        Admin Home
-      </Link>
-      <div className="row bg-dark text-white rounded py-4">
-        <div className="col-md-8 offset-md-2">
-          {successMessage()}
-          {createProductForm()}
+    <>
+      <Base
+        title="Add a product here!"
+        description="Welcome to product creation section"
+        className="container bg-info p-4"
+      >
+        <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">
+          Admin Home
+        </Link>
+        <div className="row bg-dark text-white rounded py-4">
+          <div className="col-md-8 offset-md-2">
+            {successMessage()}
+            {createProductForm()}
+          </div>
         </div>
+      </Base>
+      <div style={{marginTop:"20px"}} >
+      <Footer />
       </div>
-    </Base>
+    </>
   );
 };
 

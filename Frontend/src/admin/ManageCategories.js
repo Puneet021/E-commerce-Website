@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Base from "../core/Base";
+import Footer from "../core/Footer";
 import { Link } from "react-router-dom";
 import { isAutheticated } from "../auth/helper";
 import { getCategories, deleteCategory } from "./helper/adminapicall";
@@ -34,6 +35,7 @@ const ManageCategories = () => {
   }, []);
 
   return (
+    <>
     <Base title="Welcome admin" description="Manage products here">
       <h2 className="mb-4">All products:</h2>
       <Link className="btn btn-info" to={`/admin/dashboard`}>
@@ -73,20 +75,11 @@ const ManageCategories = () => {
         </div>
       </div>
     </Base>
+    <div style={{marginTop:"190px"}}>
+    <Footer />
+    </div>
+    </>
   );
 };
-
-// <div className="row">
-//   <div className="col-12">
-//     <h2 className="text-center text-white my-3">Total 3 products</h2>
-//     {categories.map((category, index) => {
-//       return (
-//         <h3 className="text-white" key={index}>
-//           {category.name}
-//         </h3>
-//       );
-//     })}
-//   </div>
-// </div>
 
 export default ManageCategories;

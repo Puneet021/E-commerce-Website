@@ -1,11 +1,12 @@
 import React from "react";
 import Base from "../core/Base";
+import Footer from "../core/Footer";
 import { isAutheticated } from "../auth/helper/index";
 import { Link } from "react-router-dom";
 
 const AdminDashBoard = () => {
   const {
-    user: { name, email, role }
+    user: { name, email }
   } = isAutheticated();
 
   const adminLeftSide = () => {
@@ -63,6 +64,7 @@ const AdminDashBoard = () => {
     );
   };
   return (
+    <>
     <Base
       title="Welcome to admin area"
       description="Manage all of your products here"
@@ -73,6 +75,10 @@ const AdminDashBoard = () => {
         <div className="col-9">{adminRightSide()}</div>
       </div>
     </Base>
+    <div style={{marginTop:"85px"}}>
+    <Footer />
+    </div>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Base from "../core/Base";
+import Footer from "../core/Footer";
 import { isAutheticated } from "../auth/helper";
 import { Link } from "react-router-dom";
 import { createCategory } from "./helper/adminapicall";
@@ -74,6 +75,7 @@ const AddCategory = () => {
   );
 
   return (
+    <>
     <Base
       title="Create a category here"
       description="Add a new category for new tshirts"
@@ -88,6 +90,10 @@ const AddCategory = () => {
         </div>
       </div>
     </Base>
+    <div style={{marginTop:"190px"}}>
+    <Footer />
+    </div>
+    </>
   );
 };
 

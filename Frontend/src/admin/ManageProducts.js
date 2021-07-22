@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import Base from "../core/Base";
+import Footer from "../core/Footer";
 import { Link } from "react-router-dom";
 import { isAutheticated } from "../auth/helper";
 import { getProducts, deleteProduct } from "./helper/adminapicall";
@@ -35,6 +36,7 @@ const ManageProducts = () => {
   };
 
   return (
+    <>
     <Base title="Welcome admin" description="Manage products here">
       <h2 className="mb-4">All products:</h2>
       <Link className="btn btn-info" to={`/admin/dashboard`}>
@@ -74,6 +76,10 @@ const ManageProducts = () => {
         </div>
       </div>
     </Base>
+    <div style={{marginTop:"190px"}}>
+    <Footer />
+    </div>
+    </>
   );
 };
 

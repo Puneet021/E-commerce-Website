@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../styles.css";
-import { API } from "../backend";
 import Base from "./Base";
+import Footer from "./Footer";
 import Card from "./Card";
 import { loadCart } from "./helper/cartHelper";
 import Paymentb from "./Paymentb";
+import StripeCheckout from "./StripeCheckout";
 
 const Cart = () => {
   const [products, setProducts] = useState([]);
@@ -40,20 +41,26 @@ const Cart = () => {
   };
 
   return (
+    <>
     <Base title="Cart Page" description="Ready to checkout">
       <div className="row text-center">
         <div className="col-6">
-          {products.length > 0 ? (
+          {products && products.length > 0 ? (
             loadAllProducts(products)
           ) : (
             <h4>No products</h4>
           )}
         </div>
         <div className="col-6">
-          <Paymentb products={products} setReload={setReload} />
+          <StripeCheckout
+            products={products}
+            setReload={setReload}
+          />
         </div>
       </div>
     </Base>
+    <Footer />
+    </>
   );
 };
 

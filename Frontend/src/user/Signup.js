@@ -63,7 +63,7 @@ const Signup = () => {
               />
             </div>
 
-            <div className="form-group">
+            <div className="form-group pb-3">
               <label className="text-light">Password</label>
               <input
                 onChange={handleChange("password")}

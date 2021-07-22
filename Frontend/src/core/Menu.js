@@ -75,6 +75,7 @@ const Menu = ({ history }) => (
         <li className="nav-item">
           <span
             className="nav-link text-warning"
+            style={{cursor:"pointer"}}
             onClick={() => {
               signout(() => {
                 history.push("/");

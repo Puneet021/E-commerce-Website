@@ -6,7 +6,7 @@ import { signin, authenticate, isAutheticated } from "../auth/helper";
 
 const Signin = () => {
   const [values, setValues] = useState({
-    email: "a@hitesh.com",
+    email: "p.r.s@g.com",
     password: "12345",
     error: "",
     loading: false,
@@ -92,7 +92,7 @@ const Signin = () => {
               />
             </div>
 
-            <div className="form-group">
+            <div className="form-group pb-3">
               <label className="text-light">Password</label>
               <input
                 onChange={handleChange("password")}
